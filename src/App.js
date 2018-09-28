@@ -1,21 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React , {Component} from 'react';
+import Name from './Components/Name';
+import NameInput from './Components/NameInput';
 
 class App extends Component {
+
+  constructor() {
+    super();
+   
+    this.state = {
+      name : "",
+     }
+  }
+
+  componentDidMount() {
+    
+  }
+
+  componentDidUpdate() {
+   
+  }
+  updateName = (name) => {
+    this.setState({
+      name,
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <div>{
+          this.state.name ? 
+          <Name name={this.state.name}/> : null
+        }
+        <NameInput updateName={this.updateName} />
+         </div>
+     
     );
   }
 }
 
 export default App;
+     
