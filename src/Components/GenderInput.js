@@ -2,8 +2,8 @@ import React , {Component} from 'react';
 
 class GenderInput extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     changeInputValue = e => {this.props.onInputChange('gender', e)}
