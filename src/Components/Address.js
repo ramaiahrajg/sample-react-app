@@ -1,22 +1,24 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class Name extends Component {
+class Address extends Component {
     constructor(props) {
         super(props);
         
     }
 
     render() {
-        const {name} = this.props;
+        const {address} = this.props;
         return (
-            <h1> { name ? ` Hello I am   ${name}  !` : null}</h1>
+            <h1> { 
+                address ?  ` My Address is    ${address}  !` : null
+                }</h1>
         );
     }
 }
 
-Name.propTypes  = {
-    name : PropTypes.string.isRequired,
+Address.propTypes  = {
+    address : PropTypes.string.isRequired,
 }
 
 /*const Name = ({name,tittle,initial})=> {
@@ -25,4 +27,4 @@ Name.propTypes  = {
     );
 }*/
 
-export default Name;
+export default Address;

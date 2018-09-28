@@ -9,23 +9,15 @@ class NameInput extends Component {
         }
     }
 
-    changeInputValue = e => {
-        
-        this.setState({
-            nameInputValue : e.target.value
-         }
-        );
-    }
+    changeInputValue = e => {this.props.onInputChange('name', e)}
 
     
     render() {
-        const onButtonClick = () => {
-            this.props.updateName(this.state.nameInputValue);
-        }
+       
         return(
             <div>
-                <input type="text" name="TextBox" value={this.state.nameInputValue} onChange={this.changeInputValue}/>
-                <input type="button" name="Submit" value="Submit" onClick={onButtonClick} />
+                Name :<input type="text" name="TextBox" value={this.props.name} onChange={this.changeInputValue}/>
+               
             </div>
         );
     }
